@@ -1,0 +1,48 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        FontSize="16"
+        FontFamily="Comic Sans MS"
+        FontStyle="Normal"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Background="Azure" Margin="10">
+            <Label>Шрифт</Label>
+            <ComboBox SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBoxItem Content="Arial"></ComboBoxItem>
+                <ComboBoxItem Content="Times New Roman"></ComboBoxItem>
+                <ComboBoxItem Content="JetBrains Mono"></ComboBoxItem>
+            </ComboBox>
+            <Label>Цвет текста</Label>
+            <ComboBox SelectionChanged="ComboBox_SelectionChanged_1">
+                <ComboBoxItem  Content="Красный"></ComboBoxItem>
+                <ComboBoxItem  Content="Серый"></ComboBoxItem>
+                <ComboBoxItem  Content="Жёлтый"></ComboBoxItem>
+                <ComboBoxItem  Content="Синий"></ComboBoxItem>
+            </ComboBox>
+            <Label>Начертание</Label>
+            <RadioButton Checked="RadioButton_Checked_1" DataContext="0" Content ="Обычный" GroupName="FontStyle"/>
+            <RadioButton Checked="RadioButton_Checked_1" DataContext="1" Content ="Курсив" GroupName="FontStyle"/>
+            <Label>Жирность</Label>
+            <CheckBox   Name="check" Click="CheckBox_Checked" HorizontalAlignment="Center" Content="Нормальный"></CheckBox>
+  
+            <Label>Размер</Label>
+            <Slider ValueChanged="Slider_ValueChanged" Minimum="8" Maximum="40"></Slider>
+            <Label Content="Выравнивание"/>
+            <RadioButton Checked="RadioButton_Checked" DataContext="0" Content ="По левому" GroupName="TextAign" />
+            <RadioButton Checked="RadioButton_Checked" DataContext="1" Content ="По правому" GroupName="TextAign" />
+            <RadioButton Checked="RadioButton_Checked" DataContext="2" Content ="По центру" GroupName="TextAign" />
+            <RadioButton Checked="RadioButton_Checked" DataContext="3" Content ="По ширине" GroupName="TextAign" />
+        </StackPanel>
+        <TextBlock Grid.Column="1" Name="textblock" TextWrapping="Wrap">Разработать приложение, которое будет настраивать текст разичным образом: изменение семейства шрифтов, размера текста, начертания, жирный/нормальный, цвет, выравнивание</TextBlock>
+    </Grid>
+</Window>
