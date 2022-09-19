@@ -7,14 +7,36 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
         <DockPanel>
-            <StackPanel>
-                <ComboBox Name="comboBox" HorizontalAlignment="Left" Margin="10" Width="150"></ComboBox>
-                <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="10" Width="150" />
-                <Button Content="Add" Click="Button_Click" HorizontalAlignment="Left" Margin="10" Width="150"></Button>
-                <Button Content="Delete" Click="Button_Click_1" HorizontalAlignment="Left" Margin="10" Width="150"></Button>
-                <Button Content="Cleare" Click="Button_Click_2" HorizontalAlignment="Left" Margin="10" Width="150"></Button>
+            <StackPanel Grid.Column ="2">
+                <ComboBox Name="comboBox" HorizontalAlignment="Left" Margin="10" Width="200"></ComboBox>
+                <Label>Введите текст</Label>
+                <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="10" Width="200"></TextBox>
+                <DockPanel>
+                <Button Content="Добавить" Click="Button_Click" HorizontalAlignment="Left" Margin="10" Width="90"></Button>
+                <Button Content="Удалить" Click="Button_Click_1" HorizontalAlignment="Left" Margin="10" Width="90"></Button>
+                <Button Content="Очистить" Click="Button_Click_2" HorizontalAlignment="Left" Margin="10" Width="90"></Button>
+                </DockPanel>
             </StackPanel>
         </DockPanel>
+        <DockPanel Grid.Column="1">
+         <StackPanel >
+                <Button Content="Перенести" Height="24" Margin="0 100 0 0" Click="Button_Click_3"></Button>
+                <Button Content="Копировать" Height="24" Margin="0 10 0 0" Click="Button_Click_4"/>
+                <Button Content="Вернуть" Height="24" Margin="0 10 0 0" Click="Button_Click_5"></Button>
+         </StackPanel>
+        </DockPanel>
+        <StackPanel Grid.Column="3">
+            <ListBox Name="listBox" Width="300" Height="200" Margin="0 10 0 0"></ListBox>
+            <DockPanel>
+            <Button  Content="Удалить" Height="24" Margin="10 40 0 0" Width="150" HorizontalAlignment="Left" Click="Button_Click_6"></Button>
+            <Button  Content="Очитстить" Height="24" Margin="25 40 0 0" Width="150" HorizontalAlignment="Left" Click="Button_Click_7"></Button>
+            </DockPanel>
+        </StackPanel>
     </Grid>
 </Window>

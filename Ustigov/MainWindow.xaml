@@ -1,0 +1,54 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Name="studentList" ItemsSource="{Binding Student}"></ListBox>
+
+        <StackPanel Grid.Column="1" DataContext="{Binding ElementName=studentList, Path=SelectedItem}">
+            <Label>Фамилия</Label>
+            <TextBox Text="{Binding Surname, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
+            <Label>Имя</Label>
+            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Label>Отчество</Label>
+            <TextBox Text="{Binding Patronimyc, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Label>Отделение</Label>
+            <ComboBox Name="departmentList"  SelectedItem="{Binding Department}"></ComboBox>
+            <Label>Специялизация</Label>
+            <ComboBox Name="specializationList"  SelectedItem="{Binding Specialization}"></ComboBox>
+            <Label>Курс</Label>
+            <ComboBox Name="coursList"  SelectedItem="{Binding Cours}"></ComboBox>
+            <Label>Группа</Label>
+            <ComboBox Name="groupList"  SelectedItem="{Binding Group}"></ComboBox>
+        </StackPanel>
+
+
+        <StackPanel Grid.Column="2" >
+            <Label>Добавить отделение</Label>
+            <TextBox Name="TextBoxNewPosition"></TextBox>
+            <Button  Content="Создать" Margin="0 10 0 0"></Button>
+
+
+            <Label>Добавить отделение</Label>
+            <TextBox Name="TextBoxNewPosition1"></TextBox>
+            <Button  Content="Создать" Margin="0 10 0 0"></Button>
+
+
+            <Label>Добавить отделение</Label>
+            <TextBox Name="TextBoxNewPosition2"></TextBox>
+            <Button  Content="Создать" Margin="0 10 0 0"></Button>
+        </StackPanel>
+
+
+    </Grid>
+</Window>

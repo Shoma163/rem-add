@@ -60,5 +60,73 @@ namespace WpfApp2
 
             comboBox.Items.Clear();
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            if (comboBox.SelectedItem == null)
+            {
+                return;
+                
+            }
+            if (listBox.Items.Contains(comboBox.SelectedItem))
+            {
+                MessageBox.Show("Данный элемент уже существует");
+                return;
+            }
+            else
+            {
+                listBox.Items.Add(comboBox.SelectedItem);
+                comboBox.Items.Remove(comboBox.SelectedItem);
+            }
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            if (listBox.Items.Contains((string)comboBox.SelectedItem) == false)
+            {
+                listBox.Items.Add((string)comboBox.SelectedItem);
+            } else
+            {
+                MessageBox.Show("Данный элемент уже существует");
+            }
+            
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+
+            if (listBox.SelectedItem == null)
+            {
+                return;
+
+            }
+            if (comboBox.Items.Contains(listBox.SelectedItem))
+            {
+                MessageBox.Show("Данный элемент уже существует");
+                listBox.Items.Remove(listBox.SelectedItem);
+            } else
+            {
+                comboBox.Items.Add(listBox.SelectedItem);
+                listBox.Items.Remove(listBox.SelectedItem);
+            }
+            
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            var remo = listBox.SelectedItem;
+            listBox.Items.Remove(remo);
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            if (listBox.Items.Count == 0)
+            {
+                MessageBox.Show("ListBox пуст");
+                return;
+            }
+
+            listBox.Items.Clear();
+        }
     }
 }
